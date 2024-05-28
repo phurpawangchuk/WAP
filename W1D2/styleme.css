@@ -37,8 +37,7 @@ code {
 .aboutme {
     background-color: antiquewhite;
     margin-top: 20px;
-    border-radius: 4px;
-    font: #0b0b7c;
+    border-radius: 2rem;
 }
 
 .aboutme p {
