@@ -41,12 +41,13 @@ header > img {
     position: absolute;
     margin-left: 20px;
     width: 100px;
+    top: 90px;
+    left:30px;
     border-radius: 50%;
 }
 
 .content {
     margin: 80px;
-    height: auto;
 }
 
 footer {
@@ -58,4 +59,13 @@ footer {
 
 footer > p {
     padding-top: 3px;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+a:hover {
+    color: #ee1010;
 }

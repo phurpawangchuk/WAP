@@ -1,0 +1,46 @@
+body {
+    box-sizing: border-box;
+    background-color: #fff;
+    font-family: Georgia,Garamond, Arial,sans-serif;
+    color: #404040;
+    font-size: 11pt;
+    background-image: url('./images/silverware.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: rgba(0,0,0,0.8);
+    height: 100px;
+    width: 100%;
+    color: #fff;
+    padding-top: 40px;
+}
+
+.lemonpie {
+    text-align: center;
+    font-size: 22pt;
+    font-weight: bold;
+}
+
+.recipeheading {
+    background-color: #F0F0F0;
+    color: #A4A400;
+    text-decoration: underline;
+    font-family:'Lucida Sans Unicode', Helvetica, Arial,sans-serif;
+    font-weight: bold;
+    font-size: 18pt;
+    letter-spacing: 0.25em;
+}
+
+blockquote {
+    background-color: #FFFFA8 ;
+}
+
+a {
+    color: #A4A400;
+}
+
+ul {
+    list-style-image: url('./images/pie_bullet.png'); 
+}
