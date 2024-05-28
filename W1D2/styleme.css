@@ -42,6 +42,7 @@ code {
 
 .aboutme p {
     padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 h1, h2::first-letter {
