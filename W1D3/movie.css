@@ -61,7 +61,6 @@ h1
     padding-top:5px;
 }
 
-
 .rotten33
 {
     background-image:url("./images/rbg.png");
@@ -137,7 +136,12 @@ p img
     opacity: 0.5;
 }
 
+ul {
+    padding: 0;
+    margin: 0;
+}
+
 li
 {
-	list-style-type: none;
+  list-style-type: none;
 }
