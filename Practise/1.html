@@ -1,0 +1,68 @@
+<!DOCUTYPE html>
+    <html lang="en">
+        <head>
+            <title> My page</title>
+            <style>
+                .fnamelbl { grid-area: a;}
+                .fnametxt { grid-area: b;}
+                .lnamelbl { grid-area: c;}
+                .lnametxt { grid-area: d;}
+                .foodlbl { grid-area: e;}
+                .foodtxt { grid-area: f;}
+
+                .formcontrol {
+                    display: grid;
+                    grid-template-areas: 
+                    'a b'
+                    'c d'
+                    'e f';
+                }
+
+                div {
+                    padding: 5px;
+                }
+
+                input {
+                    border-radius: 3px;
+                    padding: 8px;
+                    border: 1px solid #000;
+                    font-family: monospace;
+                }
+
+                /* input[type="text"] { 
+                    font-family: monospace;
+                } */
+
+                .container {
+                    display: flex;
+                    width: auto;
+                    justify-content: center;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <fieldset>
+                    <legend>Party Info</legend>
+                    <form class="formcontrol">
+                        <div class="fnamelbl">Firste Name</div>
+                        <div class="fnametxt">
+                            <input type="text">
+                        </div>
+                        <div class="lnamelbl">Last Name</div>
+                        <div class="lnametxt">
+                            <input type="text">
+                        </div>
+                        <div class="foodlbl">Food</div>
+                        <div class="foodtxt">
+                            <select name="" id="">
+                                <option value="">AA</option>
+                                <option value="">AA</option>
+                                <option value="">AA</option>
+                            </select>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+        </body>
+    </html>

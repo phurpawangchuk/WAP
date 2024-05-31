@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Introduction</title>
+        <script>
+
+        function sum(arr){
+            let sum = 0;
+            for(let i=0; i< arr.length; i++){
+                sum += arr[i];
+            }
+            return sum;
+        }
+
+        function multiply(arr){
+            let product = 1;
+            for(let i=0; i<arr.length; i++){
+                product *= arr[i];
+            }
+
+            return product;
+        }
+
+        function isVowel(ch){
+            const c = ch.toLowerCase();
+            if(c == 'a' || c == 'e' || c == 'i' || c =='o' || c == 'u'){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        function max(x, y){
+            if(x > y)
+                return x;
+            else
+                return y;
+        }
+
+        function maxOfThree(x,y,z){
+            return max(max(x,y),z);
+        }
+
+        function reverse(str){
+            let newString = "";
+            for(let i=str.length; i>=0; i--){
+                newString += str.charAt(i);
+            }
+            return newString;
+        }
+
+        function findLongestWord(words) {
+            let wordlength = words[0].length;
+            for(let i=0; i<words.length; i++){
+                if(wordlength < words[i].length){
+                    wordlength = words[i].length;
+                }
+            }
+            return wordlength;
+        }
+
+        function filterLongWords(words, wordlength){
+            let arr = [];
+            for(let i=0; i<words.length; i++){
+                let length = words[i].length;
+                if(length > wordlength){
+                    arr.push(words[i]);
+                }
+            }
+            return arr;
+        }
+
+        function myFunctionTest(expected, actual){
+            if(expected === actual){
+                return `TEST SUCCEEDED.`;
+            }else{
+                return `TEST FAILED. Expected: ${actual}, found: ${expected}`;
+            }
+        }
+        const x = 20, y = 10, z = 15;
+        const x1 = 55, y1 = 4, z1 = 44;
+        const vowel = 'a';
+        const notVowel = 'b';
+        const arr = [1,2,3,4,5];
+        const str = "jag testar";
+        const words = ["This","is","a","very", "interesting", "subject"];
+        const wordlength = 4;
+
+        console.log(`Expected output of max(${x},${y}) is `+max(x,y) + ' ' + myFunctionTest(x, max(x,y)));
+        console.log(`Expected output of max(${x},${y}) is `+max(x,y) + ' '+ myFunctionTest(y, max(x,y)));
+        
+        console.log(`Expected output of maxOfThree(${x1},${y1},${z1}) is `+maxOfThree(x1,y1,z1) + ' ' + myFunctionTest(x1, maxOfThree(x1,y1,z1)));
+        console.log(`Expected output of maxOfThree(${x1},${y1},${z1}) is `+maxOfThree(x1,y1,z1) + ' ' + myFunctionTest(y1, maxOfThree(x1,y1,z1)));
+       
+        console.log(`${vowel} is a vowel. `+ isVowel(vowel));
+        console.log(`${notVowel} is a vowel. `+ isVowel(notVowel));
+
+        console.log(`Sum of [${arr}] is `+ sum(arr) + ' '+myFunctionTest(25, sum(arr)));
+        console.log(`Sum of [${arr}] is `+ sum(arr) + ' '+myFunctionTest(15, sum(arr)));
+
+        console.log(`Product of [${arr}] is `+ multiply(arr) + ' '+myFunctionTest(120, multiply(arr)));
+        console.log(`Product of [${arr}] is `+ multiply(arr) + ' '+myFunctionTest(45, multiply(arr)));
+       
+        console.log(`Reverse of string ${str} is `+reverse(str) + ' '+myFunctionTest(reverse(str),"ratset gaj"));
+        console.log(`Reverse of string ${str} is `+reverse(str) + ' '+myFunctionTest("ratset gaj",str));
+    
+        console.log(`Longest word length in a sentence ${words} is `+ findLongestWord(words));
+
+        console.log(`Given Words : [${words}], Words length > ${wordlength} are [`+ filterLongWords(words, wordlength)+']');
+        </script>
+    </head>
+    <body>
+        Look in the Chrome developer console to see the output. CTRL_SHIFT_J
+        <br>
+        Or on Firefox with CTRL_SHIFT_K
+    </body>
+</html>

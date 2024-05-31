@@ -6,38 +6,41 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Test</title>
         <style>
+           .item_1 { grid-area: a;}
+           .item_2 { grid-area: b;}
+           .item_3 { grid-area: c;}
+           .item_4 { grid-area: d;}
+           .item_5 { grid-area: e;}
+           .item_6 { grid-area: f;}
+           .item_7 { grid-area: g;}
 
-        body {
-            background-color: black;
-        }
-
-        .inner span {
-            background-color: purple;
-        }
-
-        .textGroup {
-            background-color: green;
-        }
-
-        .inner strong {
-            color: magenta;
-        }
-
-        .primary {
-            color: blue;
-            background-color: orange;
-        }
-
-        #special {
-            color: red;
-        }
-
-        p {
-            color: yellow;
-        }
+           .grid-container {
+            display: grid;
+            grid-template-areas:
+            "a b c c"
+            "d b e e"
+            "d b f g";
+           }
+           div {
+            border: 1px solid black;
+            background-color: aquamarine;
+            padding: 4px;
+           }
         </style>
+        <script src="./javascript.js"></script>
     </head>
     <body>
+        <button id="demo">Click Me</button>
+        <span id="msg">Here I am</span>
+        <div class="grid-container">
+            <div class="item_1">A</div>
+            <div class="item_2">B</div>
+            <div class="item_3">C</div>
+            <div class="item_4">D</div>
+            <div class="item_5">E</div>
+            <div class="item_6">F</div>
+            <div class="item_7">G</div>
+        </div>
         <div id="outer">
             <div class="inner">
                 <p class="textGroup primary">
@@ -78,5 +81,6 @@
         <div id='yy'>YY</div>
     </div>
     <div id='z'>Z</div> -->
+        <!-- <script src="./javascript.js"></script> -->
     </body>
 </html>
