@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+    .fnamelbl {grid-area: fnamelbl;}
+    .fnametxt {grid-area: fnametxt;}
+    .lnamelbl {grid-area: lnamelbl;}
+    .lnametxt {grid-area: lnametxt;}
+    .agelbl { grid-area: agelbl;}
+    .agetxt {grid-area:agetxt;}
+    .genderlbl{grid-area:genderlbl;}
+    .gendertxt{grid-area:gendertxt;}
+
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+        'fnamelbl fnametxt lnamelbl lnametxt'
+        'agelbl agetxt agetxt agetxt'
+        'genderlbl gendertxt gendertxt gendertxt';
+        gap: 10px;
+    }
+    </style>
+    <body>
+        <div class="grid-container">
+            <div class="fnamelbl">FName</div>
+            <div class="fnametxt">
+                <input type="text">
+            </div>
+            <div class="lnamelbl">Lst Name</div>
+            <div class="lnametxt">
+                <input type="text">
+            </div>
+            <div class="agelbl">Age</div>
+            <div class="agetxt">
+                <input type="text">
+            </div>
+            <div class="genderlbl">Gender</div>
+            <div class="gendertxt">
+                <input type="radio">
+                Male
+                <input type="radio">
+                Female
+            </div>
+        </div>
+    </body>
+</html>

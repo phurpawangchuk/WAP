@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            div{
+                padding:5px;
+            }
+        </style>
+        <script>
+        window.onload = function() {
+
+            //const btn = document.getElementById('btn');
+            const btn = document.querySelector('#btn');
+
+            btn.addEventListener('click', function () {
+                const valueX = +document.getElementById('x').value;
+                const valueY = +document.getElementById('y').value;
+                document.getElementById('xy').value = valueX+valueY;
+                alert(valueX+valueY);
+
+                document.getElementById('x').value = '';
+                document.getElementById('y').value = '';
+            })
+        }
+        </script>
+    </head>
+    <body>
+        <div>
+            Enter X:
+            <input type="number" id="x">
+        </div>
+        <div>
+            Enter Y:
+            <input type="number" id="y">
+        </div>
+        <div>
+            X+Y =
+            <input type="number" id="xy">
+        </div>
+        <div>
+            <input type="submit" id="btn">
+        </div>
+    </body>
+</html>
