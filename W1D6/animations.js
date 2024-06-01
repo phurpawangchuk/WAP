@@ -15,14 +15,11 @@
 // PUT YOUR CODE IN THERE.  In myanimation.js, it is legal for you to modify
 // the variables that have been declared in this file.
 
-window.onload = function(){
+"use strict"
 
-var BLANK = "\n"+
-        "This is blank"+
-        "=====\n" +
-        "There is no animation";
+window.onload = function() {
 
-
+var BLANK = "";
 var CUSTOM = "";   // you could change the value of this variable in your code
 
 var EXERCISE = "  o\n" +
@@ -665,7 +662,7 @@ const turboChecked = document.getElementById("turbo");
 
 let speed = 250;
 let currentAnimation = null;
-timer = null;
+let timer = null;
 
 animationType.addEventListener("change", function() {
 contentArea.innerHTML = "You have choosen "+animationType.value +" animation.";
