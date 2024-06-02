@@ -15,10 +15,6 @@
 // PUT YOUR CODE IN THERE.  In myanimation.js, it is legal for you to modify
 // the variables that have been declared in this file.
 
-"use strict"
-
-window.onload = function() {
-
 var BLANK = "";
 var CUSTOM = "";   // you could change the value of this variable in your code
 
@@ -645,93 +641,9 @@ var DIVE = "  o\n" +
 // such as ANIMATIONS["Bike"] or ANIMATIONS["Dive"]
 var ANIMATIONS = [];
 
-ANIMATIONS["Blank"] = ANIMATIONS["blank"] = ANIMATIONS["BLANK"] = "";
+ANIMATIONS["Blank"] = ANIMATIONS["blank"] = ANIMATIONS["BLANK"] = "Choose one animation";
 ANIMATIONS["Custom"] = ANIMATIONS["custom"] = ANIMATIONS["CUSTOM"] = CUSTOM;   // you could change the value of this in your code
 ANIMATIONS["Exercise"] = ANIMATIONS["exercise"] = ANIMATIONS["EXERCISE"] = EXERCISE;
 ANIMATIONS["Juggler"] = ANIMATIONS["juggler"] = ANIMATIONS["JUGGLER"] = JUGGLER;
 ANIMATIONS["Bike"] = ANIMATIONS["bike"] = ANIMATIONS["BIKE"] = BIKE;
 ANIMATIONS["Dive"] = ANIMATIONS["dive"] = ANIMATIONS["DIVE"] = DIVE;
-
-
-const startBtn = document.getElementById("start");
-const stopBtn = document.getElementById("stop");
-const contentArea = document.getElementById("text-area");
-const animationType = document.getElementById("animation");
-const selectedFontSize = document.getElementById("fontsize");
-const turboChecked = document.getElementById("turbo");
-
-let speed = 250;
-let currentAnimation = null;
-let timer = null;
-
-animationType.addEventListener("change", function() {
-contentArea.innerHTML = "You have choosen "+animationType.value +" animation.";
-});
-
-turboChecked.addEventListener("change", function (){
-    if(turboChecked.checked){
-        speed = 50;
-    }else{
-        speed = 250;
-    }
-
-    if(timer !== null){
-        clearInterval(timer);
-        startAnimation();
-    }
-});
-
-selectedFontSize.addEventListener("change", function() {
-    let currentWidth=contentArea.offsetWidth;
-    let currentHeight=contentArea.offsetHeight;
-    contentArea.style.fontSize = selectedFontSize.value + "px";
-    contentArea.style.width = currentWidth + "px";
-    contentArea.style.height = currentHeight + "px";
-});
-
-
-stopBtn.addEventListener("click", function() {
-    startBtn.disabled = false;
-    stopBtn.disabled = true;
-    animationType.disabled = false;
-    if (timer !== null) {
-        clearInterval(timer);
-        timer = null;
-    }
-});
-
-function startAnimation() {
-
-    if(animationType.value == "Dive"){
-        currentAnimation = DIVE.split("=====");
-    }
-    else if(animationType.value == "Bike"){
-        currentAnimation = BIKE.split("=====");
-    }
-    else if(animationType.value == "Juggler"){
-        currentAnimation = JUGGLER.split("=====");
-    }
-    else if(animationType.value == "Exercise"){
-        currentAnimation = EXERCISE.split("=====");
-    }
-
-    startBtn.disabled = true;
-    stopBtn.disabled = false;
-    animationType.disabled = true;
-
-    let index=0;
-    timer = setInterval( function () {
-        contentArea.innerHTML = currentAnimation[index];
-        // contentArea.classList.add("");
-        index++;
-        if (index >= currentAnimation.length) {
-            index = 0;
-        }
-    }, speed);
-}
-
-
-startBtn.addEventListener("click", startAnimation);
-
-
-}
