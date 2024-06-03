@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>RegEx Form</title>
+    </head>
+    <link rel="stylesheet" href="style.css">
+    <body>
+        <form action="#">
+            <div class="grid-container">
+                <div class="item1 label">Email address</div>
+                <div class="item2">
+                    <input type="email" placeholder="Enter email">
+                </div>
+                <div class="item3 label">Password</div>
+                <div class="item4">
+                    <input
+                        type="password"
+                        pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{10,}"
+                        placeholder="Password"
+                        title="Password should have atleast 10 characters including one lowercase, one uppercase and one number"
+                    >
+                </div>
+                <div class="item5 label">
+                    <input type="checkbox">
+                    Check me out
+                </div>
+                <div class="item7">URL</div>
+                <div class="urltxt">
+                    <input
+                        type="text"
+                        placeholder="Enter URL"
+                        pattern="https?://.+"
+                        title="Enter correct URL"
+                    >
+                </div>
+                <div class="item6">
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+        <div class="w3validator">
+            <a href="https://validator.w3.org/nu/?doc=https://phurpawangchuk.github.io/W2D1/Part-II/index.htm">
+                <img src="https://phurpawangchuk.github.io/W1D3/images/w3c-html.png" alt="Valid HTML5">
+            </a>
+            <a href="https://validator.w3.org/nu/?doc=https://phurpawangchuk.github.io/W2D1/Part-II/style.css">
+                <img src="https://phurpawangchuk.github.io/W1D3/images/w3c-css.png" alt="Valid CSS">
+            </a>
+        </div>
+    </body>
+</html>

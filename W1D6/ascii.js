@@ -1,6 +1,9 @@
 "use strict";
 
-window.onload = function () {
+
+window.onload = startApplication;
+
+function startApplication() {
 
     const startBtn = document.getElementById("start");
     const stopBtn = document.getElementById("stop");

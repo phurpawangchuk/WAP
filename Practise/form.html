@@ -23,6 +23,30 @@
         'genderlbl gendertxt gendertxt gendertxt';
         gap: 10px;
     }
+
+    div{
+        padding: 10px;
+        border: 1px solid black;
+    }
+
+    .g1{ grid-area: fnamelbl1;}
+    .g2{ grid-area: mnamelbl1;}
+    .g3{ grid-area: fnametxt1;}
+    .g4{ grid-area: mnametxt1;}
+    .g5{ grid-area: agelbl1;}
+    .g6{ grid-area: agetxt1;}
+    
+    
+    .grid-container1{
+        display: grid;
+        grid-template-areas:
+        'fnamelbl1 mnamelbl1'
+        'fnametxt1 mnametxt1'
+        'agelbl1 agelbl1'
+        'agetxt1 agetxt1'
+        ;
+
+    }
     </style>
     <body>
         <div class="grid-container">
@@ -44,6 +68,21 @@
                 Male
                 <input type="radio">
                 Female
+            </div>
+        </div>
+        <!-- FOrm -->
+        <div class="grid-container1">
+            <div class="g1">Fname</div>
+            <div class="g2">Mname</div>
+            <div class="g3">
+                <input type="text">
+            </div>
+            <div class="g4">
+                <input type="text">
+            </div>
+            <div class="g5">Age</div>
+            <div class="g6">
+                <input type="text">
             </div>
         </div>
     </body>

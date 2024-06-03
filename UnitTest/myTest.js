@@ -1,4 +1,13 @@
 // "use strict";
+
+describe("earliestSpace test", function(){
+    it("takes 3 strings, and returns whicherver string has a space character at the lowest index", function() {
+        assert.equal("ba ba ba",earliestSpace("This is one","This is two", "ba ba ba"));
+    })
+          
+})
+
+
 describe("pow", function () {
     describe("x raise to power n", function() {
         for(let i=1; i<5; i++){

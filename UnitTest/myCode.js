@@ -2,6 +2,18 @@ function pow(x,n){
     return Math.pow(x,n);
 }
 
+function earliestSpace(s1, s2, s3){
+    s1Len = s1.indexOf(" ");
+    s2Len = s2.indexOf(" ");
+    s3Len = s3.indexOf(" ");
+    if(s1Len < s2Len && s1Len <  s3Len)
+        return s1;
+    else if(s2Len < s3Len && s2Len < s1Len)
+        return s2;
+    else
+        return s3;
+}
+
 function sum(arr){
     let sum = 0;
     return arr.reduce((x,y) => x+y);

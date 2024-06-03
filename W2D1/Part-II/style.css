@@ -1,0 +1,55 @@
+body{ 
+
+    margin-top: 50px;
+}
+.grid-container {
+    display: grid;
+    grid-template-areas:
+    'emaillbl'
+    'emailtxt'
+    'passwordlbl'
+    'passwordtxt'
+    'checkout'
+    'urllbl'
+    'urltxt'
+    'submitbtn';
+    width: auto;
+    justify-content: center;
+    align-content: center;
+}
+
+.item1 { grid-area: emaillbl;}
+.item2 { grid-area: emailtxt;}
+.item3 { grid-area: passwordlbl;}
+.item4 { grid-area: passwordtxt;}
+.item5 { grid-area: checkout;}
+.item6 { grid-area: submitbtn;}
+.item7 { grid-area: urllbl;}
+.item8 { grid-area: urbtxt;}
+
+.label {
+    margin-bottom: 8px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    padding: 10px;
+    width: 500px;
+    border: 1px solid #cbcccf;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+input[type="submit"]{
+ padding: 10px 20px;
+ background-color: #0e61a5;
+ color: #ffffff;
+ border: none;
+ border-radius: 5px;
+}
+
+.w3validator  {
+    display: flex;
+    margin-left: 20px;
+    justify-content: center;
+    align-content: center;
+}
