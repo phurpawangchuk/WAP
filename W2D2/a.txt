@@ -1,0 +1,34 @@
+Q1.
+    Line 5 - undefined
+    Line 6 - 8
+    Line 9 - 8 
+    Line 14 - 9
+    Line 18 - 10
+    Line 19 - 1
+
+Q2.
+    Global Scope: Variable declared outside the function or block. Accessible anywhere in the code.
+    Local Scope: Variable declared inside the function or block of code. It is accessibel inside the function or block only.
+    
+    
+Q3.
+    a. Do statements in Scope A have access to variables defined in Scope B and C?
+        NO
+    b. Do statements in Scope B have access to variables defined in Scope A?
+        NO
+    c. Do statements in Scope B have access to variables defined in Scope C?
+        NO
+    d. Do statements in Scope C have access to variables defined in Scope A?
+        YES
+    e. Do statements in Scope C have access to variables defined in Scope B?    
+        YES
+
+Q4.
+    Line 5 - 81
+    Line 7 - 25
+
+
+Q5. 
+    alert(10)
+
+

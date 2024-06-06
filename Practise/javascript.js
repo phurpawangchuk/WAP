@@ -1,9 +1,279 @@
 window.onload = function () {
 
+    
+    var x = 5;
+    var y = 7;
+    function a() {
+        function b() {
+            console.log(`1: x=${x} y=${y}`); //1. x=undefined y=7
+            y = 10;
+            return function c(y) {
+                console.log(`2: x=${x} y=${y}`); //2: x=10 y=20
+            }
+        }
+        console.log(`3: x=${x} y=${y}`) //3 x=undeifned y=7
+        var z = b()
+        var x = 10;
+        z(20);
+    }
+    console.log(`4: x=${x} y=${y}`); //4: x=5 y=7
+    a();
+    console.log(`5: x=${x} y=${y}`); //5: x=5 y=10
+
+   //Using clousre to change body fontSize
+   function changeSize(size){
+    return function() {
+        var self = this;
+        // document.body.style.fontSize = size +"px";
+        self.style.fontSize = size +"px";
+    };
+   }
+   document.getElementById('font12').onclick = changeSize(12);
+   document.getElementById('font16').onclick = changeSize(16);
+   document.getElementById('font20').onclick = changeSize(20);
+
+    //closure
+    const xc = 1;
+    function f() {
+        let y = 12;
+        const sum = function() {
+            const z = 3;
+            console.log(xc + y + z);
+        }
+        y = 10;
+        return sum;
+    } //end of f
+    const g = f();
+    g();
+    console.log("fg() ==", g());
+    
+    //
+    function aaa() {
+        console.log(x); //undefine
+    //    var x;
+    //    console.log(x); //undefine
+    }
+
+    function bbb() {
+        console.log(x); //undefine
+        var x = 20;
+        aaa();
+    }
+    var x = 30;
+    bbb();
+    console.log(x); //30
+
+    //Scope
+     x = 10;
+     bb =12;
+    function main123() {
+        console.log("x1: " + x); //undefine
+        x = 20;
+        if (x > 0) {
+            var x = 30;
+            console.log("x2: " + x); //30
+        }
+         var bb = 40;
+        var f = function(x) { 
+            console.log("x3: " + x); //50
+            bb=100;
+        }
+        f(50);
+    }
+     console.log("x0: " + 10); //10
+    main123();
+    console.log("x4: " + bb); //100
+
+    
+    //===Hoisting example
+    // var x;
+    function a() {
+            x=70;
+       }
+
+    function b() {
+        console.log('dd==',x); //undefined
+          var x = 20;
+          a();
+        console.log("cc==",x); //70
+    }
+
+    console.log(x); //undefined
+    var x = 30;
+    console.log("ff===",x); //30
+
+    b();
+
+    console.log("gg===",x); //30
+
+//====scope Test
+// var-function scope, let-block scope
+// const and let give reference error , this is good compare to var
+// function and variable declaration are hosited BUT not the function expression(Do not hoist)
+ x = 10;
+function mainDemo() {
+        console.log("x1: " + x); //undefined
+
+        var x = 20; //replaces over x, so s = 20
+        console.log("x2 ==",x); //20
+
+        if (x > 0) {
+            x = 30;
+            console.log("x3 == " + x); //30
+        }
+        console.log("x4 ==",x); //30
+        
+        x = 40;
+        console.log("x5 ==",x); //40
+        
+        var f = function(x) { 
+            var x = x;
+            console.log("x6 ==" + x);  //50
+        }
+
+        f(50);
+        console.log("x7 ==",x); //40
+        
+    }
+    mainDemo();
+    console.log("x8 ==",x); //10
+
+    //Q1
+    var x = 1;
+    var a = 5;
+    var b = 11;
+    var c = function(a,b,c){ //8 9 10
+        console.log(x); //1
+        console.log(a); //8
+
+        var f = function(a, b,c){ //8 9 10
+            b = a;         //b = 8
+            console.info("BBB==",b); //8
+            b = c;   //b = 10
+            x = 5;
+        }
+
+        f(a,b,c);
+        console.log("xx==",b); //why 9 instead of 10
+        //console.log(x); //undefined
+        //var x = 10;
+    }
+
+    c(8,9,10);
+    console.log(b); //11
+    console.log(x); //1
+    console.log(b); //1
+
+
+
+    //Q4
+        var x = 9;
+        function myFUnc(){
+            return x*x;
+        }
+        console.log("MyDunc===",myFUnc()); //81
+        x = 5;
+        console.log(myFUnc()); //25
+
+    //Q5 - faulsy statement
+    var foo = 1;
+    function bar(){
+        if(!foo){
+            var foo = 10;
+        }
+        alert(foo);
+    }
+   // bar();
+
+
+    // return the length of the longest string that does not contain a space inside it.
+    //longestNoSpace("hello", "world!"), 6);
+    //"hello"), 5);
+    //longestNoSpace("a test"), 0)
+
+    //They can optionally have a +1 at the start, then a 3 digit area code, then 3 digits for the local exchange and finally 4 digits for the individual's number.
+    // const phone = RegExp("^(\+1)?\s?\d{3}\s?\d{3}\s?\d{4}$");
+    //             RegExp("^(\+1)? ?\d{3} ?\d{3} ?\d{4}$")
+
+    function longestNoSpace(...strings) {
+        return strings
+            .filter(str => !str.includes(" "))
+            .map(str => str.length)
+            .reduce((a, b) => Math.max(a,b),0);
+    }
+
+    const ln = longestNoSpace("12345","123456789");
+    console.log("Longest ===",ln); //9
+
+
+    //======W2D1 --- find and findIndex arrow function
+    //find returns specific value of the given condition
+
+    const aa = [24,22,20,25,55,60];
+    const odd = aa.find(n => n%5 ==0 && n>30);
+    console.log(odd);//55
+
+    const oddIndex = aa.findIndex(n =>  n%5 ==0 && n>30);
+    console.log(oddIndex); //4 
+
+    //filters retues array/list of value with given constion
+    const odd1 = aa.filter(n => n%5 ==0 && n>30);
+    console.log(odd1[0]); //55
+
+    //==== RegExp checking
+    let email = "phurpa-wang20@gmail.com";
+    // let matcher = new RegExp("^[a-zA-Z0-9_\-]+@(([a-zA-Z_\-])+\.)+[a-zA-Z]{2,}$");
+    let matcher = new RegExp("^[a-zA-Z0-9_\.^\-]+@([a-zA-Z]+\.([a-zA-Z]{2,}))$");
+    // let matcher = new RegExp("^[a-zA-Z0-9_\.^@]+@[^-]+\\.([a-zA-Z]{2,})$");
+    console.log(email.match(matcher))
+    console.log(matcher.test(email))
+
+    let cash = "$100.00";
+    // const cc = new RegExp("^\$[1-9]\d{2,}\.[0-9]{2}$");
+    const cc = new RegExp("^\\$[1-9][0-9]{2,}\\.[0-9]{2}$");
+
+    console.log(cash.match(cc))
+    console.log(cc.test(cash))
+
+
+    const atoms = [
+                    "Hydrogen",
+                    "Helium",
+                    "Lithium",
+                    "Beryllium"
+                ];
+
+
+    const res = atoms.map(s => s.length);
+
+    const objArr = [
+            {x:11}, 
+            {x:12}, 
+            {x:13} 
+        ];
+   
+    var sum1 = objArr.reduce((a, b) => a + b.x,0);
+        console.log(sum1);
+
+        const intArr = [1,2,3,4,5];
+        const s1 = intArr.reduce((a,b) => a+b, 0);
+        console.log(s1);
+
+        //=========for ..in and for...of =========================
+        //for..in returns key(index) and works on both array and object
+        //for...of returns value, do not work on objext
+        for(let i in objArr){
+            console.log(i);
+        }
+
+        for(let i of intArr){
+            console.log(i);
+        }
+    ////////////////
     setInterval(alertMessage, 600000);
 
     function alertMessage() {
-        alert("10 minutes have passed");
+        //alert("10 minutes have passed");
     }
 
     //====Timer

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        body {
+                background-color: black;
+            }
+            .inner span {
+                background-color:purple;
+            }
+            .textGroup {
+                background-color: green;
+            }
+            .inner strong {
+                color: magenta;
+            }
+            .primary {
+                color: blue;
+                background-color: orange;
+            }
+            #special {
+                color: red;
+            }
+            p {
+                color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="outer">
+            <div class="inner">
+                <p class="textGroup primary">
+                    ONE
+                    <!--//F-Blue, B-Orange-->
+                    <strong>
+                        TWO
+                        <!--//F-Magenta, B-Orange-->
+                        <span>THREE</span>
+                        <!--//F-Magenta, B-purple-->
+                    </strong>
+                </p>
+                <p class="textGroup">
+                    FOUR
+                    <!--//F-yellow, B-green-->
+                    <span id="special">FIVE</span>
+                    <!--//F-red, B-purple-->
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
