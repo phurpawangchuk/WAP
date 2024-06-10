@@ -1,6 +1,33 @@
 window.onload = function () {
 
-    var Person = function(){}
+    var Computer = function(ram, cpu, storage){
+        this.cpu = cpu;
+        this.ram = ram;
+        this.storage = storage;
+      }
+      
+      Computer.prototype.runProgram = function(program){
+        console.log(`running ${program}`);
+      }
+      
+      var Laptop = function(ram, cpu, storage, battery){
+        Computer.call(this, ram,cpu, storage);
+        this.battery = battery;
+      }
+      
+      Laptop.prototype = new Computer();
+      
+      Laptop.prototype.carryAround = function(){
+        console.log(`carrying laptop, cpu: ${this.cpu} ram: ${this.ram} storage: ${this.storage} battery: ${this.battery}`);
+      }
+
+      const lap = new Laptop("16GB", "3gHz", "1TB", "16H");
+      lap.carryAround();
+
+
+    // var Person = function(){}
+
+    function Person(){}
 
     Person.prototype.initialize = function(name,age){
         this.name = name;
@@ -12,7 +39,8 @@ window.onload = function () {
     }
 
     //Teacher constructor
-    var Teacher = function(){}
+    function Teacher(){}
+    // var Teacher = function(){}
     
     //extends from Person
     Teacher.prototype = new Person();
@@ -26,8 +54,7 @@ window.onload = function () {
     teacher.initialize("Michael", 35);
     console.log(teacher.teach("WAP"));
 
-
-    var Student = function(){}
+    var Student =  function(){}
     Student.prototype = new Person();//Object.create(Person.prototype);
     Student.prototype.learn = function(subject){
         console.log(`${this.name} learnt ${subject}`)
@@ -83,48 +110,48 @@ console.log(add5()); //15
 
 //Q5
 const employee = (function(){
-    const name='', age=30,salary=0.0;
+    var name, age,salary;
 
-    const getNameFunction = function(){
+   function getName(){
         return this.name;
     };
 
-    const getAgeFunction = function(){
+    function getAge(){
         return this.age;
     };
 
-    const getSalaryFunction = function(){
+    function getSalary(){
         return this.salary;
     };
 
-    const setNameFunction = function(name){
+    function setName(name){
         this.name = name;
     };
 
-    const setAgeFunction = function(age){
+    function setAge(age){
         this.age = age;
     };
 
-    const setSalaryFunction = function(salary){
+    function setSalary(salary){
         this.salary = salary;
     };
 
-    const increaseSalaryFunction = function(percentage) {
+    function increaseSalary(percentage) {
         this.salary += this.salary * percentage;
     };
 
-    const incrementAgeFunction = function(){
-        this.getAge();
+    function incrementAge(){
+        age = this.getAge();
     }
     return {
-        getName: getNameFunction,
-        getAge : getAgeFunction,
-        getSalary: getSalaryFunction,
-        setName: setNameFunction,
-        setAge: setAgeFunction,
-        setSalary: setSalaryFunction,
-        increaseSalary: increaseSalaryFunction,
-        incrementAge: incrementAgeFunction
+        getName,
+        getAge,
+        getSalary,
+        setName,
+        setAge,
+        setSalary,
+        increaseSalary,
+        incrementAge
     };
 })();
 
@@ -133,17 +160,17 @@ const employee = (function(){
 employee.extension = function(){
     var address;
 
-    const getAddressFunction = function(){
+    function getAddress(){
         return this.address;
-    };
+    }
 
-    const setAddressFunction = function(address){
+    function setAddress(address){
         this.address = address;
     }
 
     return {
-        getAddress: getAddressFunction,
-        setAddress: setAddressFunction
+        getAddress,
+        setAddress
     }
 };
 
@@ -163,7 +190,7 @@ function Square(x,y,w,h){
     this.h = h;
 }
 //square extends Shape
-Square.prototype = Object.create(Shape.prototype);
+Square.prototype = new Shape();//Object.create(Shape.prototype);
 Square.prototype.findArea = function(){
     return this.w * this.h;
 }
@@ -178,7 +205,7 @@ function Rectangle(x,y,l,b){
     this.b = b;
 }
 
-Rectangle.prototype = Object.create(Shape.prototype);
+Rectangle.prototype = new Shape();// Object.create(Shape.prototype);
 Rectangle.prototype.findArea = function() {
     return this.l * this.b;
 }
@@ -210,7 +237,7 @@ function ChocolateCookie(size,numberOfChips){
     this.numberOfChips = numberOfChips;
 }
 
-ChocolateCookie.prototype = Object.create(Cookie.prototype);
+ChocolateCookie.prototype = new Cookie();//Object.create(Cookie.prototype);
 ChocolateCookie.prototype.judge = function(){
     if(this.numberOfChips < 5){
         console.log(`Not a lot of chokolate`)
