@@ -1,0 +1,25 @@
+div{
+    margin: 20px;
+}
+
+#container {
+    margin:45% 45%;
+}
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: lightblue;
+    transition: all 0.3s;
+}
+
+#control{
+    position: fixed;
+    display: flex;
+    left: 0px;
+    bottom: 0px;
+    flex-direction: column;
+    justify-content: center;
+    width: 120px;
+    gap: 5px;
+    margin-left: 10px;
+}
