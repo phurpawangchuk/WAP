@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <style>
+        table {
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        td.b {
+            background-color: #e0dcdc;
+        }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script>
+        $(() => {
+            let turn = 0;
+            $('td').click((evt) => {
+                if(turn %2 ==0){
+                    $(evt.target).text('X');
+                }else{
+                    $(evt.target).text('O')
+                }
+                turn++;
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td class="b">&nbsp;</td>
+                <td class="b">&nbsp;</td>
+                <td class="b">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="b">&nbsp;</td>
+                <td class="b">&nbsp;</td>
+                <td class="b">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="b">&nbsp;</td>
+                <td class="b">&nbsp;</td>
+                <td class="b">&nbsp;</td>
+            </tr>
+        </table>
+    </body>
+</html>
