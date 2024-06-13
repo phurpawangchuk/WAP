@@ -1,0 +1,9 @@
+body {
+    background-color: rgb(211, 178, 135);
+}
+h1{
+    color: red;
+}
+a:link{
+    color:aqua;
+}

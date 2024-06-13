@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="./js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <form action="./product" method="post">
+        <input type="text" name="username" placeholder="Enter username"><br>
+        <input type="password" name="password" placeholder="Enter password"><br>
+   
+   <label>Dzongkhag</label> 
+   <select id="dzongkha">
+    <% for(let d of dzongkha) { %>
+    <option value="<%= d.id %>"><%= d.name%></option>
+    <% } %>
+   </select>
+   <br>
+   <button>Submit</button>
+</form>
+
+</body>
+</html>
